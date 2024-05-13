@@ -1,0 +1,30 @@
+
+@font-face{
+    font-family:Nike-font;
+    src:url(../fonts/Nike.otf)
+}
+
+.privacy-content {
+	margin-top: 100px;
+	margin-bottom: 200px;
+}
+
+.privacy-content h1 {
+	font-family:Nike-font, Helvetica, sans-serif;
+	text-align: center;
+	font-size: 70px;
+	font-weight: bolder;
+	margin-bottom: 50px;
+}
+
+.privacy-content .center {
+	text-align: center;
+	margin-left: 0px;
+}
+
+.privacy-content p {
+	font-size: 20px;
+	margin-bottom: 20px;
+	margin-left: 150px;
+	margin-right: 150px;
+}

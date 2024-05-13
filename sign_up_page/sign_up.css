@@ -1,0 +1,173 @@
+@font-face {
+    font-family: 'HelveticalNowText-Bold';
+    src: url(../fonts/HelveticaNowText-Bold.ttf);
+}
+
+@font-face {
+    font-family: 'Nike';
+    src: url(../fonts/Nike.otf);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    /* font-family: 'HelveticalNowText-Bold' ,sans-serif; */
+	font-family: 'Nike';
+}
+
+html {
+    font-size: 62.5%;
+}
+
+.container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-wrapper {
+    width: 150rem;
+    height: 70rem;
+    background-color: #ffffff;
+    border-radius: 3rem;
+    box-shadow: 0 2rem 6rem rgba(0, 0, 0, .3);
+    overflow: hidden;
+}
+
+.banner {
+    position: absolute;
+    top: 25%;
+    left: -30rem;
+    text-align: center;
+    color: #fff;
+    width: 30rem;
+    z-index: 100;
+    transition: left 0.8s;
+}
+
+.container.change .banner {
+    left: 5rem;
+}
+
+.banner h1 {
+    font-size: 4rem;
+    margin-bottom: 3rem;
+}
+
+.banner p {
+    font-size: 2rem;
+}
+
+.green-bg {
+	
+    font-family: 'HelveticalNowText-Medium' ,sans-serif;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, #000000, #ffffff);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 50;
+    transition: width 1.5s cubic-bezier(0.19, 1, 0.22, 1);
+}   
+
+.logo {
+	height: 100px;
+	width: 100px;
+}
+.container.change .green-bg {
+    width: 40%;
+}
+
+.green-bg button {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 16rem;
+    height: 5rem;
+    background-color: transparent;
+    border: 0.1rem solid #fff;
+    border-radius: 3rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    color: #fff;
+    cursor: pointer;
+}
+
+.signup-form {
+    width: 100rem;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10rem 0;
+    transition: left 1.5s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.container.change .signup-form {
+    left: 40rem;
+}
+
+.signup-form h1 {
+    font-size: 4 rem;
+    color: #000000;
+}
+
+.signup-form p {
+    font-size: 1.8rem;
+    color: #555;
+    margin-bottom: 2rem;
+}
+
+.input-group {
+    position: relative;
+}
+
+.input-group input {
+    width: 28rem;
+    height: 5rem;
+    padding: 1rem 1rem 1rem 3rem;
+    background-color: #ddd;
+    border: none;
+    border-radius: 0.5rem; 
+}
+
+.input-group i {
+    position: absolute;
+    top: 26%;
+	padding-left: 1rem;
+    left: 1rem;
+    transform: translate(-50%);
+    font-size: 1.2rem;
+    color: #555;
+}
+
+.signup-form button {
+    width: 16rem;
+    height: 5rem;
+    background-color: #000000;
+    border: none;
+    border-radius: 3rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    color: #fff;
+    margin-top: 3rem;
+    cursor: pointer;
+}
+
+.input-group p {
+	color: red;
+	font-size: 14px;
+	margin-bottom: 5px;
+	text-align: center;
+	visibility: hidden;
+}

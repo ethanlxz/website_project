@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+   <head>
+      <meta charset="utf-8">
+      <title>Login</title>
+      <link rel="stylesheet" href="login.css">
+	  <link rel="stylesheet" href="../header/header.css">
+	  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+	  <link href="../header/image/NIKE.ico" rel="icon"/>
+	  <link rel="stylesheet" href="../footer/footer.css">
+	  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+	  
+	 <!-- animations -->
+	  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+	  <script src="../header/header.js"></script>
+
+	<!--   HEADER -->
+	<div class="header">
+		<div class="header-right">
+			<a>Sign in</a>
+			|
+			<a href="../sign_up_page/sign_up.html">Join us</a>
+		</div>
+	</div>
+	<div class="menu-bar">
+		<ul>
+			<div class="menu-left">
+				<li>
+					<a href="./Header.html"><img src="../header/image/nike.png" alt="Nike logo" width="50px" height="50px"/></a>
+				</li>
+			</div>
+			<li>
+				<div class="menu-center">
+					<a href="../main_page/index.html">Home</a>
+				</div>
+			</li>
+			<li>
+				<a href="#">Men</a>
+				<div class="sub-menu-1">
+					<ul class="dropdown_menu-1">
+						<li class="dropdown_item-1"><a href="#">Shoes</a></li>
+						<li class="dropdown_item-2"><a href="#">Clothing</a></li>
+					</ul>
+				</div>
+			</li>
+			<li>
+				<a href="#">Women</a>
+				<div class="sub-menu-1">
+					<ul class="dropdown_menu-2">
+						<li class="dropdown_item-1"><a href="#">Shoes</a></li>
+						<li class="dropdown_item-2"><a href="#">Clothing</a></li>
+					</ul>
+				</div>
+			</li>
+			<li>
+				<a href="#">Kids</a>
+				<div class="sub-menu-1">
+					<ul class="dropdown_menu-3">
+						<li class="dropdown_item-1"><a href="#">Shoes</a></li>
+						<li class="dropdown_item-2"><a href="#">Clothing</a></li>
+					</ul>
+				</div>
+			</li>
+			<div class="menu-right">
+				<li>
+					<form>
+						<div class="search">
+							<span class="search-icon material-symbols-outlined">search</span>
+							<input class="search-input" type="search" placeholder="Search">
+						</div>
+					</form>
+				</li>
+				<li>
+					<img src="../header/image/favourite.png" alt="favourite" width="25px" height="25px"/>
+				</li>
+				<li>
+					<img src="../header/image/cart.png" alt="cart" width="25px" height="25px"/>
+				</li>
+			</div>
+		</ul>
+	</div>
+	</head>
+
+
+
+   <body>
+	<div class="centerlol" 
+		data-aos="fade-up"
+		data-aos-duration="1500">
+      <div class="wrapper">
+         <div class="title">
+            <img src="../header/image/nike.png" alt="Nike logo" width="120px" height="120px"/>
+         </div>
+         <form id="form" action="#">
+            <div class="field">
+               <input type="text" required id="email">
+			   <!-- <input type="text" id="email">  -->
+               <label>Email Address</label>
+			   <p id="email-text">Message</p>
+            </div>
+            <div class="field">
+               <input type="password" required id="password">
+			   <!-- <input type="password" id="password"> -->
+               <label>Password</label>
+			   <p id="password-text">Message</p>
+            </div>
+            <div class="content">
+               <div class="checkbox">
+                  <input type="checkbox" id="remember-me">
+                  <label for="remember-me">Remember me</label>
+               </div>
+               <div class="pass-link">
+                  <a href="../forgot_password_page/forgot.html">Forgot password?</a>
+               </div>
+            </div>
+            <div class="field">
+               <input type="submit" value="Login"  id="login">
+            </div>
+            <div class="signup-link">
+               Not a member? <a href="../sign_up_page/sign_up.html">Join us now</a>
+            </div>
+         </form>
+      </div>
+	</div>
+	<br><br><br><br>
+   </body>
+
+   <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+   <script>
+	 AOS.init();
+   </script>
+
+   <script src="login.js"></script>
+
+   	<!-- FOOTER -->
+<footer class="footer">
+	<div class="footer-container">
+		<div class="row">
+			<div class="footer-col">
+				<h4>company</h4>
+				<ul>
+					<li><a href="#">about us</a></li>
+					<li><a href="https://about.nike.com/en/newsroom">news</a></li>
+					<li><a href="../privacy_page/privacy.html">privacy policy</a></li>
+				</ul>
+			</div>
+			<div class="footer-col">
+				<h4>get help</h4>
+				<ul>
+					<li><a href="../faq_page/faq.html">FAQ</a></li>
+					<li><a href="#">shipping</a></li>
+					<li><a href="#">order status</a></li>
+					<li><a href="#">payment options</a></li>
+					<li><a href="#">contact us</a></li>
+				</ul>
+			</div>
+			<div class="footer-col">
+			</div>
+			<div class="footer-col">
+				<h4>follow us</h4>
+				<div class="social-links">
+					<a href="https://web.facebook.com/nike/"><i class="fab fa-facebook-f"></i></a>
+					<a href="https://twitter.com/Nike"><i class="fab fa-twitter"></i></a>
+					<a href="https://www.instagram.com/nike/?hl=en"><i class="fab fa-instagram"></i></a>
+				</div>
+			</div>
+		</div>
+	</div>
+</footer>
+
+<div class="bottom-bar">
+	<p>&copy; 2024 Ethan Law . All rights reserved</p>
+</html>

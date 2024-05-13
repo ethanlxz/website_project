@@ -1,0 +1,246 @@
+*
+{
+    padding: 0;
+    margin: 0;
+}
+
+/* styling word font */
+@font-face {
+    font-family:'HelveticalNowText-Bold';
+    src: url(../fonts/HelveticaNowText-Bold.ttf);
+}
+
+body
+{
+    font-family: 'HelveticaNowText-Bold', Arial, Helvetica, sans-serif;
+    background: rgb(255, 255, 255);
+    box-sizing: border-box;
+    overflow-x: hidden;
+	overflow-y: scroll;
+}
+
+
+
+/* styling header */
+.header
+{
+    height: 25px;
+    text-align: left;
+    padding: 0.3rem 4rem;
+	padding-bottom: 25px;
+	background-color: rgb(239, 236, 236);
+}
+.header-right
+{
+    float: right;
+    font-size: 15px;
+}
+
+.header-right a
+{
+	color: #000000;
+	text-decoration: none;
+}
+
+.header-right a:hover
+{
+	color: rgb(146, 146, 146)
+}
+
+/* styling menu-bar */
+.menu-bar
+{
+    background: #FFFFFF;
+    text-align: center;
+}
+.menu-center
+{
+    margin-left: 300px;
+}
+.menu-bar ul
+{
+    background: #FFFFFF;
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+.menu-bar ul li
+{
+    margin: 8px;
+    position: relative;
+}
+.menu-bar li
+{
+    display: inline-block;
+    position: relative;
+}
+.menu-bar ul li a
+{
+    text-decoration: none;
+    color: #000000;
+    padding: 18px 40px;
+}
+.menu-bar li a
+{
+    display: block;
+    padding: 20px 25px;
+    text-align: center;
+    font-size: 20px;
+}
+
+/* styling sub-menu-1 */
+.sub-menu-1
+{
+    display: none;
+}
+.menu-bar ul li:hover .sub-menu-1
+{
+    display: block;
+    position: absolute;
+}
+.menu-bar ul li:hover .sub-menu-1 ul
+{
+    display: block;
+    margin: 5px;
+}
+.menu-bar ul li:hover .sub-menu-1 ul li
+{
+    width: 150px;
+    padding: 5px;
+    border-bottom: 1px solid #000000;
+    border-radius:0;
+    text-align: center;
+}
+.menu-bar ul li:hover .sub-menu-1 ul li:last-child
+{
+    border-bottom: none;
+	margin: 5px
+}
+
+/* styling menu-bar left  not yet done*/
+.menu-left
+{
+    margin-right: 1px;
+}
+
+.menu-left li {
+    display: inline-block;
+    margin-right: 5px;
+}
+/* styling menu-bar right */
+.menu-right
+{
+    margin-left: 140px;
+}
+.menu-right li {
+    display: inline-block;
+    margin-left: 20px;
+}
+
+/* styling search bar */
+.search 
+{
+    --padding: 14px;
+
+    width: max-content;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: var(--padding);
+    border-radius: 28px;
+    background: #f6f6f6;
+}
+.search-input 
+{
+    width: 150px;
+    height: 25px;
+    font-size: 16px;
+    color: #333333;
+    margin-left: 10px;
+    margin-right: var(--padding);
+    outline: none;
+    border: none;
+    background: transparent;
+    flex: 1;
+}
+.search-input::placeholder 
+{
+    color: gray;
+}
+
+/* styling animation */
+.dropdown_menu-1 > .dropdown_item-1 
+{
+    transform-origin: top center;
+    animation: Men 300ms 240ms ease-in-out backwards;
+}
+.dropdown_menu-1 > .dropdown_item-2 
+{
+    transform-origin: top center;
+    animation: Men 300ms 300ms ease-in-out backwards;
+}
+
+@keyframes Men {
+    0% {
+        opacity: 0;
+        transform: Men(0);
+    }
+    50% {
+        transform: Men(1.07);
+    }
+    100% {
+        opacity: 1;
+        transform: Men(1);
+    }
+}
+
+.dropdown_menu-2 > .dropdown_item-1 
+{
+    transform-origin: top center;
+    animation: Women 300ms 240ms ease-in-out backwards;
+}
+.dropdown_menu-2 > .dropdown_item-2 
+{
+    transform-origin: top center;
+    animation: Women 300ms 300ms ease-in-out backwards;
+}
+
+@keyframes Women {
+    0% {
+        opacity: 0;
+        transform: Women(0);
+    }
+    50% {
+        transform: Women(1.07);
+    }
+    100% {
+        opacity: 1;
+        transform: Women(1);
+    }
+}
+
+.dropdown_menu-3 > .dropdown_item-1 
+{
+    transform-origin: top center;
+    animation: Women 300ms 240ms ease-in-out backwards;
+}
+.dropdown_menu-3 > .dropdown_item-2 
+{
+    transform-origin: top center;
+    animation: Women 300ms 300ms ease-in-out backwards;
+}
+
+@keyframes Kids {
+    0% {
+        opacity: 0;
+        transform: Kids(0);
+    }
+    50% {
+        transform: Kids(1.07);
+    }
+    100% {
+        opacity: 1;
+        transform: Kids(1);
+    }
+}
+

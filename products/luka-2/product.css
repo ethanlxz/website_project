@@ -1,0 +1,179 @@
+html {
+  font-size: 100%;
+}
+
+body {
+  margin: 0;
+}
+
+main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 4rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.box{
+  box-sizing:border-box;
+}
+
+.product-images {
+  position: relative;
+  width: 70%;
+  margin-right: 4rem;
+}
+
+.product-info {
+  width: 30%;
+  font-family: sans-serif;
+}
+
+.product-header__members {
+  color: rgb(153, 46, 0);
+}
+
+.product-header__name {
+  margin: 0.5rem 0;
+  font-weight: 400;
+}
+
+.product-header__category {
+  margin: 0.5rem 0;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.product-header__price {
+  margin: 1rem 0;
+  font-weight: 600;
+}
+
+.product-sizes__header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.product-sizes__selection ol {
+  list-style-type: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 7px;
+}
+
+.product-sizes__selection ol li {
+  border: 1px solid darkgrey;
+  border-radius: 6px;
+  padding: 0.75rem 2rem;
+  text-align: center;
+  cursor: pointer;
+  transition: border-color 0.1s; 
+  font-size: 15px;
+}
+
+.product-sizes__selection ol li:hover {
+  border-color: black; 
+}
+
+.product-purchase button {
+  border-radius: 50px;
+  background-color: black;
+  color: white;
+  border: 2px ;
+  width: 100%;
+  padding: 1rem;
+  font-size: 1.2rem;
+  margin: 0.5rem 0;
+  cursor: pointer;
+}
+
+.product-purchase button:hover {
+  background-color: rgb(106, 106, 106); 
+}
+
+.product-favorite button {
+  border-radius: 50px;
+  background-color: rgb(255, 255, 255);
+  color: black;
+  border: 2px solid grey;
+  width: 100%;
+  padding: 1rem;
+  font-size: 1.25rem;
+  margin: 0.5rem 0;
+  cursor: pointer;
+  transition: border-color 0.1s;
+}
+
+.product-favorite button:hover {
+  border-color: black; 
+}
+
+.product-description {
+  margin: 2rem 0;
+  line-height: 2;
+}
+
+.image-slider__viewport {
+  overflow: hidden;
+  overflow-y: scroll;
+
+  position: relative;
+  width: 100%;
+
+}
+
+.image-slider__container img {
+  scroll-snap-align: start; /* Ensure each image starts at the beginning of the container */
+  border-radius: 15px; /* Add border-radius to images */
+  width: 100%; /* Set image width to take full width of the container */
+  height: auto; /* Maintain aspect ratio */
+}
+
+.image-slider__container {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory; /* Enable horizontal snap scrolling */
+  height: auto;
+  width: 70%; /* Ensure the container takes full width */
+  scroll-behavior: smooth; /* Optional: Add smooth scrolling effect */
+  margin: 100px auto 0;
+  transform: scale(1.2); /* 放大 1.2 倍 */
+  transform-origin: center; /* 设置变换的中心点为容器的中心 */
+}
+
+.image-slider img {
+  min-width: 100%;
+  height: 100%;
+}
+
+/* CSS for the previous and next buttons */
+.prev, .next {
+  position: absolute;
+  top: 60%;
+  /* transform: translateY(-50%);
+  z-index: 1; */
+  cursor: pointer;
+  color: rgb(0, 0, 0);
+  font-size: 15px;
+  padding: 15px 20px;
+  margin-top: 100px;
+  background-color: rgba(255, 252, 252, 0.797);
+  border: none;
+}
+
+.prev {
+  border-radius:50%;
+  right: 130px;;
+}
+
+.next {
+  border-radius:50%;
+  right: 78px;
+}
+
+.prev:hover, .next:hover {
+  background-color: rgb(106, 106, 106);
+}
