@@ -1,0 +1,385 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+
+    <style>
+        /* 样式用于添加边框和调整图表大小 */
+        body {
+            background-color: #ffffff; /* 深灰 */
+            color: #f0f0f0; /* 浅灰 */
+            font-family: Arial, sans-serif; /* 字体 */
+        }
+        .h{margin: 20px 50px 20px 50px;}
+
+        .chart-container {
+            border: 2px solid #483d8b; /* 深蓝紫 */
+            border-radius: 10px; /* 圆角 */
+            width: 400; /* 设置初始宽度 */
+            height: 480px; /* 设置初始高度 */
+            margin: 20px 20px 2px 50px; /* 顶部、右侧、底部、左侧间距 */
+            padding: 20; /* 添加内边距 */
+            float: left; /* 左浮动 */
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3); /* 添加阴影效果 */
+        }
+
+        .chart-container2 {
+            border: 2px solid #483d8b; /* 深蓝紫 */
+            border-radius: 10px; /* 圆角 */
+            width: 700px; /* 设置初始宽度 */
+            height: 500px; /* 设置初始高度 */
+            margin: 20px 50px 20px 50px; /* 顶部、右侧、底部、左侧间距 */
+            padding: 30px; /* 添加内边距 */
+            float: left; /* 左浮动 */
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3); /* 添加阴影效果 */
+        }
+
+        canvas {
+            -moz-user-select: none;
+            -webkit-user-select: none;
+            -ms-user-select: none;
+        }
+
+        .pie-chart-container {
+            border: 2px solid #483d8b; /* 深蓝紫 */
+            border-radius: 10px; /* 圆角 */
+            width: 580px; /* 设置宽度 */
+            height: 650px; /* 设置高度 */
+            padding: 0px; /* 添加内边距 */
+            float: left; /* 左浮动 */
+            margin: 0px 20px 20px 50px; /* 顶部、右侧、底部、左侧间距 */
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3); /* 添加阴影效果 */
+        }
+
+        .transaction-container {
+            border: 2px solid #483d8b; /* 深蓝紫 */
+            border-radius: 10px; /* 圆角 */
+            width: 580px; /* 设置宽度 */
+            height: 70px; /* 设置高度 */
+            margin: 30px 60px 20px 20px; /* 顶部、右侧、底部、左侧间距 */
+            padding: 20px; /* 添加内边距 */
+            float:right;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3); /* 添加阴影效果 */
+            font-size: 13px
+        }
+        
+        .transaction-container3 {
+            border: 2px solid #483d8b; /* 深蓝紫 */
+            border-radius: 10px; /* 圆角 */
+            width: 580px; /* 设置宽度 */
+            height: 70px; /* 设置高度 */
+            margin: 20px 50px 20px 70px; /* 顶部、右侧、底部、左侧间距 */
+            padding: 20px; /* 添加内边距 */
+            float: left; /* 左浮动 */
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3); /* 添加阴影效果 */
+            font-size: 13px
+        }
+        .transaction-container4 {
+            border: 2px solid #483d8b; /* 深蓝紫 */
+            border-radius: 10px; /* 圆角 */
+            width:580px; /* 设置宽度 */
+            height: 70px; /* 设置高度 */
+            margin: 20px 50px 20px 70px; /* 顶部、右侧、底部、左侧间距 */
+            padding: 20px; /* 添加内边距 */
+            float: left; /* 左浮动 */
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3); /* 添加阴影效果 */
+            font-size: 13px
+        }
+        .custom-button {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 16px;
+            font-weight: bold;
+            color: #ffffff;
+            background-color: #007bff;
+            border: 2px solid #007bff;
+            border-radius: 5px;
+            cursor: pointer; /* Add pointer cursor on hover */
+            transition: background-color 0.3s ease, border-color 0.3s ease, transform 0.2s ease; /* Add transition effect */
+        }
+
+        /* Change button style on hover */
+        .custom-button:hover {
+            background-color: #0056b3;
+            border-color: #0056b3;
+        }
+
+        /* Change button style on click */
+        .custom-button:active {
+            transform: translateY(1px);
+            background-color: #004080;
+            border-color: #004080;
+        }
+        .tr {
+            height: 50px;
+            color:aqua;
+            
+        }
+        .table
+        {height:100px;
+         width:1400px;
+        color:aqua;
+        border-color: #004080;
+    align-items:center;}
+
+        /* Modify the table header style */
+       /* Modify the table header style */
+.th {
+    height: 100px;
+    width:400px;
+    text-align: center;
+    align-items: center;
+    color: rgb(255, 255, 255); /* Change text color to white */
+    background-color: #275b8f; /* Change background color */
+    border: solid 1px #0808085e; /* Match border color with background */
+    padding: 10px; /* Reduce padding */
+    font-family: 'Courier New', Courier, monospace;
+    align-items: center;
+    margin: 0 auto; /* Center the table horizontally */
+}
+
+/* Modify the table cell style */
+.td {
+    height: 50px;
+    width:400px;
+    text-align: center;
+    border: solid 1px #5b47dd; /* Match border color with header */
+    padding: 10px; /* Reduce padding */
+    font-family: Arial, sans-serif; /* Change font */
+    background-color: #f0f0f0; /* Light gray background color */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3); 
+    color: #7765ec; /* Dark purple text color */
+}
+
+</style>
+
+    <title>Data Analysis</title>
+</head>
+
+<body>
+    <div style="display: flex; align-items: center; margin-left: 50px;"> <!-- 新的容器 -->
+        <h2 style="color: #483d8b; font-size: 40px; margin-right: 20px;">Data Analysis of Company</h2>
+        <hr><input type="button" value="Back" class="custom-button" style="margin: 10px 20px 20px 0;">
+    </div>
+    <div class="h">
+    <div class="chart-container">
+        <h2 style="color: #483d8b;">Total Income</h2>
+        <p style="color: #ccc;">$39120</p>
+        <canvas id="myChart" width="450" height="370"></canvas>
+    </div>
+    <div class="chart-container2">
+        <h2 style="color: #483d8b;">Monthly Sales Comparison</h2>
+        <canvas id="secondChart" width="500" height="300"></canvas>
+    </div>
+
+    <div class="pie-chart-container">
+        <h2 style="color: #483d8b;text-align: left;">Marketing Trend Movement</h2>
+        <canvas id="pieChart" width="180" height="150"></canvas>
+        <p style="color: #ccc; text-align: center; font-size: 24px; margin-top: 0px;">75%</p>
+    </div>
+
+    <h2 style="color: #483d8b;font-size: 35px;text-align: center;">Transactions</h2>
+    <div class="transaction-container">
+        <div style="display: flex; justify-content:  space-between; align-items: center;font-size: 23px;">
+            <div style="color: #ccc;">Women Shoes</div>
+            <div style="color: #26884a;"><b>+￥312</b></div>
+        </div>
+        <div style="color:grey">BY USER 丽君ka_</div>
+        <div style="color: #767977;" >Xiamen,China mainland</div>
+
+    </div>
+    <div class="transaction-container3">
+        <div style="display: flex; justify-content:  space-between; align-items: center;font-size: 23px;">
+            <div style="color: #ccc;">Man Shoes</div>
+            <div style="color: #26884a;"><b>+￥1235</b></div>
+        </div>
+        <div style="color:grey">BY USER kakdnxka_123</div>
+        <div style="color: #767977;" >Edinburgh,England</div>
+    </div>
+
+    <div class="transaction-container4">
+        <div style="display: flex; justify-content:  space-between; align-items: center;font-size: 23px;">
+            <div style="color: #ccc;">Summer Style</div>
+            <div style="color: #26884a;"><b>+￥312</b></div>
+        </div>
+        <div style="color:grey">BY USER iwwicwamx235</div>
+        <div style="color: #767977;" >Jakarta,Indonesia</div>
+    </div>
+   
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+
+    <script>
+        // JavaScript代码用于创建和配置图表
+        var ctx = document.getElementById('myChart').getContext('2d');
+        var options = {};
+        var data = {
+            labels: ['July', 'August', 'September', 'October', 'November', 'Disember'],
+            datasets: [{
+                label: '# of Income',
+                data: [78000, 219382, 323546, 25411, 13452, 12453],
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.2)',
+                    'rgba(54, 162, 235, 0.2)',
+                    'rgba(255, 206, 86, 0.2)',
+                    'rgba(75, 192, 192, 0.2)',
+                    'rgba(153, 102, 255, 0.2)',
+                    'rgba(255, 159, 64, 0.2)'
+                ],
+                borderColor: [
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(153, 102, 255, 1)',
+                    'rgba(255, 159, 64, 1)'
+                ],
+                borderWidth: 1
+            }]
+        };
+        var myChart = new Chart(ctx, {
+            type: 'bar',
+            data: data,
+            options: options
+        });
+
+        // 创建第二个图表
+        var secondCtx = document.getElementById('secondChart').getContext('2d');
+        var secondData = {
+            labels: ['January', 'February', 'March', 'April', 'May', 'June'],
+            datasets: [{
+                label: 'Men Shoes',
+                data: [200, 500, 300, 1400, 1000, 1200],
+                backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                borderColor: 'rgba(255, 99, 132, 1)',
+                borderWidth: 2, // 加粗边框
+                lineTension: 0.3 // 减少曲线张力
+            }, {
+                label: 'Women Shoes',
+                data: [300,700, 700, 500, 1100, 1300],
+                backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                borderColor: 'rgba(54, 162, 235, 1)',
+                borderWidth: 2, // 加粗边框
+                lineTension: 0.3 // 减少曲线张力
+            }]
+        };
+        var secondChart = new Chart(secondCtx, {
+            type: 'line',
+            data: secondData,
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        position: 'top',
+                        labels: {
+                            boxWidth: 20 // 减小图例盒子大小
+                        }
+                    },
+                    title: {
+                        display: true,
+                        text: 'Monthly Sales Comparison',
+                        font: {
+                            size: 16 // 增加标题字体大小
+                        }
+                    }
+                },
+                animation: {
+                    duration: 2000, // 动画持续时间增加到2秒
+                    easing: 'easeInOutQuart' // 使用缓动效果
+                }
+            }
+        });
+
+        // 创建饼图
+        var pieCtx = document.getElementById('pieChart').getContext('2d');
+        var pieData = {
+            labels: ['Men Shoes', 'Women Shoes'],
+            datasets: [{
+                label: 'Marketing Trend Movement',
+                data: [75, 25],
+                backgroundColor: [
+                    'rgba(148,0,211, 0.6)', // 紫色
+                    'rgba(0,0,139, 0.6)' // 深蓝
+                ],
+                borderColor: [
+                    'rgba(148,0,211, 1)',
+                    'rgba(0,0,139, 1)'
+                ],
+                borderWidth: 1
+            }]
+        };
+        var pieChart = new Chart(pieCtx, {
+            type: 'doughnut',
+            data: pieData,
+            options: {
+                plugins: {
+                    title: {
+                        display: true,
+                        text: 'Marketing Trend Movement',
+                        font: {
+                            size: 13
+                        }
+                    }
+                }
+            }
+         });
+    </script>
+
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+   <br><br><br><br><br><br><!DOCTYPE html>
+   <html lang="en">
+   <head>
+     
+   
+    <table class="table">
+        <tr class="tr">
+            <th class="th" rowspan="2">Product</th>
+            <th class="th" colspan="3">Grass Profit</th>
+            <th class="th" colspan="3">Non Profit</th>
+        </tr>
+        <tr class="tr">
+            <th class="th">Actual</th>
+            <th class="th">Index</th>
+            <th class="th">Completion Rate</th>
+            <th class="th">Actual</th>
+            <th class="th">Index</th>
+            <th class="th">Completion Rate</th>
+        </tr>
+        <tr class="tr">
+            <th class="th">Man category</th>
+            <th class="th">996.30</th>
+            <th class="th">811.76</th>
+            <th class="th">122.73%</th>
+            <th class="th">546.30</th>
+            <th class="th">611.76</th>
+            <th class="th">89.30%</th>
+
+        </tr>
+        <tr class="tr">
+            <th class="th">Woman category</th>
+            <th class="th">435.88</th>
+            <th class="th">674.11</th>
+            <th class="th">64.66%</th>
+            <th class="th">265.88</th>
+            <th class="th">374.11</th>
+            <th class="th">71.01%</th>
+
+        </tr>
+        <tr class="tr">
+            <th class="th">Kids category</th>
+            <th class="th">855.99</th>
+            <th class="th">956.88</th>
+            <th class="th">90.50%</th>
+            <th class="th">656.30</th>
+            <th class="th">458.33</th>
+            <th class="th">143.19%</th>
+
+        </tr>
+    </table>
+          
+
+</body>
+</html>
