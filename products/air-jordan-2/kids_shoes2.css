@@ -163,7 +163,7 @@ html {
   /* CSS for the previous and next buttons */
   .prev, .next {
     position: absolute;
-    top: 65%;
+    top: 60%;
     /* transform: translateY(-50%);
     z-index: 1; */
     cursor: pointer;
