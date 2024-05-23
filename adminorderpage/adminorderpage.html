@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Order Management</title>
+    <link rel="stylesheet" href="adminorderpage.css">
+</head>
+<body>
+
+    <h1>Manage Orders</h1>
+    
+    <button class="btn-add" id="showFormBtn">Add Order</button>
+    
+    <form id="orderForm">
+        <label for="orderId">Order ID:</label>
+        <input type="text" id="orderId" pattern ="[0-9]{6}" placeholder="Please enter a 6-digit order ID" required>
+        <label for="dateTime">Date & Time:</label>
+        <input type="datetime-local" id="dateTime" required>
+        <label for="customerName">Customer Name:</label>
+        <input type="text" id="customerName" required>
+        <label for="status">Status:</label>
+        <select id="status" required>
+            <option value="pending">Pending</option>
+            <option value="completed">Completed</option>
+            <option value="cancelled">Cancelled</option>
+        </select>
+        <br>
+        <label for="itemsOrdered">Items Ordered:</label>
+        <input type="number" id="itemsOrdered" required>
+        <label for="totalAmount">Total Amount:</label>
+        <input type="number" step="0.01" id="totalAmount" required>
+        <button type="button" class="btn-add" id="addOrderBtn">Add Order</button>
+        <button type="button" class="btn" id="hideFormBtn">Cancel</button>
+    </form>
+    
+    <table id="ordersTable">
+        <thead>
+            <tr>
+                <th>Order ID</th>
+                <th>Date & Time</th>
+                <th>Customer Name</th>
+                <th>Status</th>
+                <th>Items Ordered</th>
+                <th>Total Amount</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Orders will be added here dynamically -->
+        </tbody>
+    </table>
+
+<script src="adminorderpage.js"></script>
+
+</body>
+</html>
