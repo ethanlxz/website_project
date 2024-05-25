@@ -253,3 +253,12 @@ td {
         display: none;
     }
 }
+
+a, a :visited{
+	color: white;
+}
+
+select {
+	width: auto;
+	height: auto;
+}

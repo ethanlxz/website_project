@@ -51,6 +51,18 @@ th {
     margin: 5px 2px;
 }
 
+.home {
+		background-color: #000000; /* Green */
+		border: none;
+		color: white;
+		padding: 5px 10px;
+		text-align: center;
+		text-decoration: none;
+		display: inline-block;
+		font-size: 16px;
+		margin: 5px 2px;
+}
+
 .btn-add:hover{
     background-color:#028f5b;
 }
