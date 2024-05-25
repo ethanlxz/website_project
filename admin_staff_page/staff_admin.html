@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Staff Management</title>
+    <link rel="stylesheet" href="staff_admin.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Staff Management</h1>
+        <input type="text" id="searchInput" placeholder="Search by ID">
+        <button id="searchButton">Search</button>
+        <button id="addButton">Add Employee</button>
+        <table id="staffTable">
+            <thead>
+                <tr>
+                    <th>Employee ID</th>
+                    <th>Name</th>
+                    <th>Position</th>
+                    <th>Email</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody id="staffList">
+               
+            </tbody>
+        </table>
+    </div>
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2 id="modalTitle">Add Employee</h2>
+            <input type="hidden" id="staffId">
+            <input type="text" id="name" placeholder="Name" pattern="[A-Za-z]+" title="Please enter letters only">
+            <select id="position">
+                <option value="Manager">Manager</option>
+                <option value="Stuff">Staff</option>
+                <option value="CEO">CEO</option>
+                <option value="Supervisor">Supervisor</option>
+            </select>
+            <input type="email" id="email" placeholder="Email" pattern=".+@gmail\.com" required>
+            <button id="saveButton">Save</button>
+        </div>
+    </div>
+    <script src="staff_admin.js"></script>
+</body>
+</html>

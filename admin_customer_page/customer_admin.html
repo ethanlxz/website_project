@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>Member Management</title>
+    <link rel="stylesheet" href="customer_admin.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Member Management</h1>
+        <input type="text" id="searchInput" placeholder="Search by ID">
+        <button id="searchButton">Search</button>
+        <button id="addButton">Add Customer</button>
+        <table id="customerTable">
+            <thead>
+                <tr>
+                    <th>Customer ID</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody id="customerList">
+               
+            </tbody>
+        </table>
+    </div>
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2 id="modalTitle">Add Customer</h2>
+            <input type="hidden" id="customerId">
+            <input type="text" id="name" placeholder="Name" pattern="[A-Za-z]+" title="Please enter letters only">
+            <input type="email" id="email" placeholder="Email" pattern=".+@gmail\.com" required>
+            <button id="saveButton">Save</button>
+        </div>
+    </div>
+    <script src="customer_admin.js"></script>
+</body>
+</html>
