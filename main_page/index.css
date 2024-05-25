@@ -310,4 +310,6 @@
       src: url('Image\HelveticaNowText-Bold.ttf') format('HelveticaNowText-Bold'),
     }
 
-   
+   .slider-container a {
+	text-decoration: none;
+   }
