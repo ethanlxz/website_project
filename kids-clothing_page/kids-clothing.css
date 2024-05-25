@@ -1,0 +1,65 @@
+
+@font-face{
+    font-family:HelvericalNowText-Bold;
+    src:url(../fonts/HelveticaNowText-Bold.ttf)
+}
+
+@font-face{
+    font-family:HelvericalNowText-Medium;
+    src:url(../fonts/HelveticaNowText-Medium.ttf)
+}
+
+
+@font-face{
+    font-family:Nike-font;
+    src:url(../fonts/Nike.otf)
+}
+
+* {
+	font-family: HelvericalNowText-Bold ;
+}
+
+.box {
+	padding: 90px 120px;
+}
+
+.title h1{
+	font-size: 3rem;
+	font-weight: 700;
+	margin-bottom: 1rem;
+}
+
+.small-title {
+	font-size: 1.2rem;
+}
+
+
+.parent {
+	text-align: center;
+	padding-top: 60px;
+}
+
+.item {
+	padding-left: 100px;
+	padding-right: 100px;
+	width:600px;
+	height:500px;
+	display: inline-block;
+	/* background-color: aqua; */
+}
+
+.item img {
+	width: 430px;
+}
+
+.item a {
+	font-family: HelvericalNowText-Medium;
+	display: block;
+	text-align: left;
+	font-size: 20px;
+}
+
+.second {
+	color: rgb(186, 182, 182);
+}
+
