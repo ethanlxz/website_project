@@ -134,7 +134,9 @@ body
     display: inline-block;
     margin-left: 10px;
 }
-
+.menu-right .menu-right-link {
+    padding: 0;
+}
 
 /* styling search bar */
 .search 
