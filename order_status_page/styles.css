@@ -1,6 +1,4 @@
-body {
-    font-family: Arial, sans-serif;
-}
+
 
 .container {
     max-width: 600px;
@@ -18,7 +16,7 @@ input[type="text"] {
 
 button {
     padding: 10px 15px;
-    background-color: #A020F0;
+    background-color: #000000;
     color: #fff;
     border: none;
     border-radius: 5px;
@@ -27,7 +25,7 @@ button {
 }
 
 button:hover {
-    background-color: #4b0082;
+    background-color: #2f2f2f;
 }
 
 #map {
