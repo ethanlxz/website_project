@@ -1,0 +1,109 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+#addButton {
+    padding: 8px 20px;
+    background-color: rgb(255, 255, 255);
+    color: black;
+    border: 2px solid grey;
+    cursor: pointer;
+    font-size: 0.9rem;
+    margin-right: 1px;
+    margin-bottom: 20px;
+    transition: border-color 0.1s;
+    border-radius: 4px;
+}
+
+#addButton:hover {
+    border-color: black;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+#modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 20% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+input[type="text"], input[type="price"], select {
+    padding: 10px;
+    margin: 5px 0;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%;
+}
+
+#saveButton {
+    padding: 2px 20px;
+    background-color: rgb(255, 255, 255);
+    color: black;
+    border: 2px solid grey;
+    cursor: pointer;
+    font-size: 0.9rem;
+    margin-right: 1px;
+    transition: border-color 0.1s;
+    border-radius: 4px;
+}
+
+#saveButton:hover {
+    border-color: black;
+}
