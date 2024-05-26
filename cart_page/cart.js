@@ -1,48 +1,96 @@
-var product_total_amt = document.getElementById('product_total_amt');
-var shipping_charge = document.getElementById('shipping_charge');
-var total_cart_amt = document.getElementById('total_cart_amt');
-var discountCode = document.getElementById('discount_code1');
-const decreaseNumber = (incdec, itemprice) => {
-	var itemval = document.getElementById(incdec);
-	var itemprice = document.getElementById(itemprice);
-	console.log(itemprice.innerHTML);
-	// console.log(itemval.value);
-	if (itemval.value <= 0) {
-		itemval.value = 0;
-		alert('Negative quantity not allowed');
-	} else {
-		itemval.value = parseInt(itemval.value) - 1;
-		itemval.style.background = '#fff';
-		itemval.style.color = '#000';
-		itemprice.innerHTML = parseInt(itemprice.innerHTML) - 15;
-		product_total_amt.innerHTML = parseInt(product_total_amt.innerHTML) - 15;
-		total_cart_amt.innerHTML = parseInt(product_total_amt.innerHTML) + parseInt(shipping_charge.innerHTML);
-	}
-}
-const increaseNumber = (incdec, itemprice) => {
-	var itemval = document.getElementById(incdec);
-	var itemprice = document.getElementById(itemprice);
-	// console.log(itemval.value);
-	if (itemval.value >= 5) {
-		itemval.value = 5;
-		alert('max 5 allowed');
-		itemval.style.background = 'red';
-		itemval.style.color = '#fff';
-	} else {
-		itemval.value = parseInt(itemval.value) + 1;
-		itemprice.innerHTML = parseInt(itemprice.innerHTML) + 15;
-		product_total_amt.innerHTML = parseInt(product_total_amt.innerHTML) + 15;
-		total_cart_amt.innerHTML = parseInt(product_total_amt.innerHTML) + parseInt(shipping_charge.innerHTML);
-	}
-}
+var discountCode = document.getElementById('discount_code');
+
 const discount_code = () => {
-	let totalamtcurr = parseInt(total_cart_amt.innerHTML);
-	let error_trw = document.getElementById('error_trw');
-	if (discountCode.value === 'ethan') {
-		let newtotalamt = totalamtcurr - 15;
-		total_cart_amt.innerHTML = newtotalamt;
-		error_trw.innerHTML = "Hurray! code is valid";
-	} else {
-		error_trw.innerHTML = "Try Again! Valid code is thapa";
+	// let totalamtcurr = parseInt(total_cart_amt.innerHTML);
+	// let error_trw = document.getElementById('error_trw');
+	if (discountCode.value === 'ETHAN') {
+
+		calculateTotal('ETHAN');
+		alert('Code applied! You got 100% discount');
+
+	} else if (discountCode.value === 'FREESHIP') {
+		calculateTotal('FREESHIP');
+		alert('Code applied! You got free shipping !');
+	}
+	else {
+		alert('Invalid code');
 	}
 }
+
+
+function upadateCaseNumber(product, price, isIncreasing){
+    const caseInput = document.getElementById(product + '-number');
+    let caseNumber = caseInput.value;
+            if(isIncreasing){
+                caseNumber = parseInt(caseNumber) + 1;
+            }
+            
+    else if(caseNumber > 0){
+           caseNumber = parseInt(caseNumber) - 1;
+         }
+        
+        caseInput.value = caseNumber;
+    // update case total 
+    const caseTotal = document.getElementById(product + '-total');
+    caseTotal.innerText = caseNumber * price;
+    calculateTotal();
+    }
+
+
+    function getInputvalue(product){
+        const productInput = document.getElementById(product + '-number');
+        const productNumber = parseInt(productInput.value);
+        return productNumber;
+    }
+    function calculateTotal(code){
+        const phoneTotal = getInputvalue('phone') * 329;
+        const caseTotal = getInputvalue('case') * 419;
+        const subTotal = phoneTotal + caseTotal;
+        const tax = subTotal * 0.06;
+        let totalPrice = subTotal + tax + 30;
+
+		if (code === 'ETHAN') {
+			totalPrice = 0;
+		}
+
+		if (code === 'FREESHIP') {
+			totalPrice  = subTotal + tax;
+		}
+
+
+        // update on the html 
+        document.getElementById('sub-total').innerText = subTotal;
+        document.getElementById('tax-amount').innerText = tax.toFixed(2);
+        document.getElementById('total-price').innerText = totalPrice.toFixed(2);
+
+    }
+
+
+
+
+
+document.getElementById('case-plus').addEventListener('click',function(){
+        // const caseInput = document.getElementById('case-number');
+        // const caseNumber = caseInput.value;
+        // caseInput.value = parseInt(caseNumber) + 1;
+   upadateCaseNumber('case', 419 ,true);
+});
+
+document.getElementById('case-minus').addEventListener('click',function(){
+    // const caseInput = document.getElementById('case-number');
+//     const caseNumber = caseInput.value;
+//    if(caseInput.value > 1){
+//         caseInput.value = parseInt(caseNumber) - 1;
+//    }
+upadateCaseNumber('case', 419, false);
+});
+
+// phone prcie update using add event linstner 
+document.getElementById('phone-plus').addEventListener('click',function(){
+    upadateCaseNumber('phone',329, true);
+});
+
+
+document.getElementById('phone-minus').addEventListener('click',function(){
+    upadateCaseNumber('phone',329 , false);
+});

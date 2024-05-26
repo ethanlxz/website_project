@@ -1,118 +1,64 @@
-
-
-* {
-	margin: 0;
-	padding: 0;
-	/* box-sizing: border-box; */
+body{
+	background: #ddb5b5;
 }
-
-:root {
-	--text-clr: #4f4f4f;
+.cart{
+	margin: 20px 0;
+	background-color: #F6F5FA;;
+	padding: 60px 0;
 }
-
-p {
-	color: #6c757d;
+.total-price{
+	padding-bottom: 15px;
 }
-
-a {
-	text-decoration: none;
-	color: var(--text-clr);
+.cart-item{
+	background-color: #fff;
+	border-radius: 10px;
+	padding: 15px 20px;
+	margin-bottom: 20px;
 }
-
-a:hover {
-	text-decoration: none;
-	color: var(--text-clr);
+.center-item{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
 }
-
-h2 {
-	color: var(--text-clr);
-	font-size: 1.5rem;
+.cart-item img{
+	width: 115px;
 }
-
-.main_cart {
-	background: #fff;
+.cart-item h5{
+    padding: 0 45px;
 }
-
-.card {
+.cart-item .remove-item{
+	width: 25px!important;
+}
+.btn-default{
+	background-color: #fff;
+}
+.cart-item .form-control{
+	background-color: #F6F5FA;
+	border: none;
+    width: 65px;
+    border-radius: 10px!important;
+    font-weight: 700;
+    font-size: 20px;
+}
+.input-group{
+	width: unset;
+	flex-wrap: nowrap;
+}
+.status{
+	text-align: right;
+}
+.check-out{
+    float: right;
+    padding: 10px 30px;
+	font-size: 19px;
+	background-color: #000000;
 	border: none;
 }
 
-.product_img img {
-	min-width: 200px;
-	max-height: 200px;
-}
-
-.product_name {
-	color: black;
-	font-size: 1.4rem;
-	text-transform: capitalize;
-	font-weight: 500;
-}
-
-.card-title p {
-	font-size: 0.9rem;
-	font-weight: 500;
-}
-
-.remove-and-wish p {
-	font-size: 0.8rem;
-	margin-bottom: 0;
-}
-
-.price-money h3 {
-	font-size: 1rem;
-	font-weight: 600;
-}
-
-.set_quantity {
-	position: relative;
-}
-
-.set_quantity::after {
-	content: "(Note, 1 piece)";
-	width: auto;
-	height: auto;
-	text-align: center;
-	position: absolute;
-	bottom: -20px;
-	right: 1.5rem;
-	font-size: 0.8rem;
-}
-
-.page-link {
-	line-height: 16px;
-	width: 45px;
-	font-size: 1rem;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	color: #495057;
-}
-
-.page-item input {
-	line-height: 22px;
-	padding: 3px;
+.apply {
+	background-color: #000000;
+	color: #fff;
+	border: none;
 	font-size: 15px;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	text-align: center;
-}
-
-.page-link:hover {
-	text-decoration: none;
-	color: #495057;
-	outline: none !important;
-}
-
-.page-link:focus {
-	box-shadow: none;
-}
-
-.price_indiv p {
-	font-size: 1.1rem;
-}
-
-.fa-heart:hover {
-	color: red;
+	cursor: pointer; 
 }
