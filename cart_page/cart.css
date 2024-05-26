@@ -1,6 +1,9 @@
-body{
-	background: #ddb5b5;
+a {
+	padding: 0;
+	margin: 0;
+	border-spacing: 0;
 }
+
 .cart{
 	margin: 20px 0;
 	background-color: #F6F5FA;;
@@ -9,6 +12,7 @@ body{
 .total-price{
 	padding-bottom: 15px;
 }
+
 .cart-item{
 	background-color: #fff;
 	border-radius: 10px;
