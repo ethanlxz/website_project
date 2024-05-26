@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="comment.css">
+		<!-- COPY HERE -->
+		<link rel="stylesheet" href="../header/header.css">
+		<link rel="stylesheet"
+			href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+		<link href="../header/image/NIKE.ico" rel="icon" />
+		<link rel="stylesheet" href="../footer/footer.css">
+		<link rel="stylesheet" type="text/css"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+		<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+		<!-- END COPY -->
+    <title>Nike</title>
+</head>
+<body>
+	
+    <div class="wrapper">
+        <h3>Leave us a review !</h3>
+        <form id="reviewForm">
+            <div class="rating">
+                <input type="number" name="rating" hidden>
+                <i class='bx bx-star star' style="--i:0;"></i>
+                <i class='bx bx-star star' style="--i:1;"></i>
+                <i class='bx bx-star star' style="--i:2;"></i>
+                <i class='bx bx-star star' style="--i:3;"></i>
+                <i class='bx bx-star star' style="--i:4;"></i>
+            </div>
+            <textarea name="opinion" cols="30" rows="5" placeholder="Your opinion..."></textarea>
+            <div class="btn-group">
+                <button type="submit" class="btn submit">Submit</button>
+                <button type="button" class="btn cancel">Cancel</button>
+				<button type="button" class="btn cancel" onclick="document.location='../main_page/index.html'">Back to home</button>
+            </div>
+        </form>
+        <div class="reviews">
+            <h5>Reviews</h5>
+            <div class="review-list"></div>
+        </div>
+    </div>
+    <script src="comment.js"></script>
+</body>
+</html>
