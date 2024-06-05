@@ -12,6 +12,10 @@ const discount_code = () => {
 		calculateTotal('FREESHIP');
 		alert('Code applied! You got free shipping !');
 	}
+	else if (discountCode.value === 'MEMBER') {
+		calculateTotal('MEMBER');
+		alert('Code applied! You got 20% discount !');
+	}
 	else {
 		alert('Invalid code');
 	}
@@ -55,6 +59,9 @@ function upadateCaseNumber(product, price, isIncreasing){
 
 		if (code === 'FREESHIP') {
 			totalPrice  = subTotal + tax;
+		}
+		if (code === 'MEMBER') {
+			totalPrice  = ((subTotal + tax) * 0.8) + 30;
 		}
 
 
