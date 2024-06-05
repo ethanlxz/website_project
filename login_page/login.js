@@ -31,7 +31,7 @@ function checkInputs() {
 		setSuccessFor(password);
 	}
 
-	if ( (emailValue.localeCompare("ethan@gmail.com") == 0) && (passwordValue.localeCompare("ethanishandsome") == 0) ) {
+	if ( (emailValue.localeCompare("admin@gmail.com") == 0) && (passwordValue.localeCompare("admin") == 0) ) {
 		window.location.href = "../admin_page/admin.html";
 	}
 }
